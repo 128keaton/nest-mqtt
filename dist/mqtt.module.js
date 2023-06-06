@@ -26,7 +26,6 @@ let MqttModule = MqttModule_1 = class MqttModule {
                 mqtt_explorer_1.MqttExplorer,
                 mqtt_service_1.MqttService,
             ],
-            exports: [],
         };
     }
     static forRoot(options) {
@@ -42,7 +41,6 @@ let MqttModule = MqttModule_1 = class MqttModule {
                 mqtt_explorer_1.MqttExplorer,
                 mqtt_service_1.MqttService,
             ],
-            exports: [],
         };
     }
 };

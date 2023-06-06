@@ -26,6 +26,7 @@ let MqttExplorer = MqttExplorer_1 = class MqttExplorer {
         this.logger = logger;
         this.client = client;
         this.options = options;
+        this.reflector = new core_1.Reflector();
         this.subscribers = [];
         this.reflector = new core_1.Reflector();
     }

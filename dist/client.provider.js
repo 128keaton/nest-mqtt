@@ -9,22 +9,23 @@ function createClientProvider() {
         useFactory: (options, logger) => {
             const client = (0, mqtt_1.connect)(options);
             client.on('connect', () => {
-                logger.log('MQTT connected');
+                logger.log('MQTT: Connected', 'MQTT');
             });
             client.on('disconnect', packet => {
-                logger.log('MQTT disconnected');
+                logger.log('MQTT: Disconnected', 'MQTT');
             });
             client.on('error', error => {
                 logger.error(error);
             });
             client.on('reconnect', () => {
-                logger.log('MQTT reconnecting');
+                logger.log('MQTT: Reconnecting', 'MQTT');
             });
             client.on('close', error => {
-                logger.log('MQTT closed');
+                logger.log('MQTT: Connection Closed', 'MQTT');
+                logger.error(error);
             });
             client.on('offline', () => {
-                logger.log('MQTT offline');
+                logger.log('MQTT: Connection Offline', 'MQTT');
             });
             return client;
         },

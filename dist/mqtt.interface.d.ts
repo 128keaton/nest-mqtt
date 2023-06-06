@@ -2,8 +2,8 @@
 import { IClientOptions, Packet } from 'mqtt';
 import { LoggerService, Type } from '@nestjs/common';
 import { ModuleMetadata } from '@nestjs/common/interfaces';
-export declare type MqttMessageTransformer = (payload: Buffer) => any;
-export declare type LoggerConstructor = new (...params: any[]) => LoggerService;
+export type MqttMessageTransformer = (payload: Buffer) => any;
+export type LoggerConstructor = new (...params: any[]) => LoggerService;
 export interface MqttSubscribeOptions {
     topic: string | string[];
     queue?: boolean;

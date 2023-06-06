@@ -8,8 +8,8 @@ export declare class MqttExplorer implements OnModuleInit {
     private readonly logger;
     private readonly client;
     private readonly options;
-    subscribers: MqttSubscriber[];
     private readonly reflector;
+    subscribers: MqttSubscriber[];
     constructor(discoveryService: DiscoveryService, metadataScanner: MetadataScanner, logger: Logger, client: Client, options: MqttModuleOptions);
     onModuleInit(): void;
     preprocess(options: MqttSubscribeOptions): string | string[];
