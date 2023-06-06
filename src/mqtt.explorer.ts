@@ -21,8 +21,6 @@ export class MqttExplorer implements OnModuleInit {
   private readonly reflector = new Reflector();
   subscribers: MqttSubscriber[];
 
-  private readonly reflector: Reflector;
-
   constructor(
     private readonly discoveryService: DiscoveryService,
     private readonly metadataScanner: MetadataScanner,
