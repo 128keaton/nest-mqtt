@@ -8,24 +8,33 @@ function createClientProvider() {
         provide: mqtt_constants_1.MQTT_CLIENT_INSTANCE,
         useFactory: (options, logger) => {
             const client = (0, mqtt_1.connect)(options);
+            const log = (message, error = false) => {
+                if (options.logger && options.logger.useBuiltinLogging === false) {
+                    return;
+                }
+                if (error) {
+                    return logger.error(message);
+                }
+                logger.log(message);
+            };
             client.on('connect', () => {
-                logger.log('MQTT: Connected', 'MQTT');
+                log('MQTT: Connected');
             });
-            client.on('disconnect', packet => {
-                logger.log('MQTT: Disconnected', 'MQTT');
+            client.on('disconnect', _ => {
+                log('MQTT: Disconnected');
             });
             client.on('error', error => {
-                logger.error(error);
+                log(error, true);
             });
             client.on('reconnect', () => {
-                logger.log('MQTT: Reconnecting', 'MQTT');
+                log('MQTT: Reconnecting');
             });
             client.on('close', error => {
-                logger.log('MQTT: Connection Closed', 'MQTT');
-                logger.error(error);
+                log('MQTT: Connection Closed');
+                log(error, true);
             });
             client.on('offline', () => {
-                logger.log('MQTT: Connection Offline', 'MQTT');
+                log('MQTT: Connection Offline');
             });
             return client;
         },

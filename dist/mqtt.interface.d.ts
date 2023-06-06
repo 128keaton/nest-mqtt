@@ -27,6 +27,7 @@ export interface MqttSubscriber {
 export interface MqttLoggerOptions {
     useValue?: LoggerService;
     useClass?: Type<LoggerService>;
+    useBuiltinLogging?: boolean;
 }
 export interface MqttModuleOptions extends IClientOptions {
     queue?: boolean;
