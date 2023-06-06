@@ -9,7 +9,7 @@ A MQTT module for Nest.js. Compatible with emqtt.
 > ⚠️ After version 0.2.0, `nest-mqtt` make a breaking change. User should add additional `mqtt` package manual.
 
 ```bash
-$ npm install nest-mqtt mqtt --save
+$ npm install @vipstorage/nest-mqtt mqtt --save
 ```
 
 ## Usage
