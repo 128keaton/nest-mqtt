@@ -16,7 +16,7 @@ exports.MqttService = void 0;
 const common_1 = require("@nestjs/common");
 const mqtt_constants_1 = require("./mqtt.constants");
 const mqtt_1 = require("mqtt");
-let MqttService = class MqttService {
+let MqttService = exports.MqttService = class MqttService {
     constructor(client) {
         this.client = client;
     }
@@ -60,10 +60,9 @@ let MqttService = class MqttService {
         });
     }
 };
-MqttService = __decorate([
+exports.MqttService = MqttService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, common_1.Inject)(mqtt_constants_1.MQTT_CLIENT_INSTANCE)),
     __metadata("design:paramtypes", [mqtt_1.Client])
 ], MqttService);
-exports.MqttService = MqttService;
 //# sourceMappingURL=mqtt.service.js.map

@@ -19,7 +19,7 @@ const core_1 = require("@nestjs/core");
 const mqtt_constants_1 = require("./mqtt.constants");
 const mqtt_1 = require("mqtt");
 const mqtt_transform_1 = require("./mqtt.transform");
-let MqttExplorer = MqttExplorer_1 = class MqttExplorer {
+let MqttExplorer = exports.MqttExplorer = MqttExplorer_1 = class MqttExplorer {
     constructor(discoveryService, metadataScanner, logger, client, options) {
         this.discoveryService = discoveryService;
         this.metadataScanner = metadataScanner;
@@ -163,7 +163,7 @@ let MqttExplorer = MqttExplorer_1 = class MqttExplorer {
         return matches;
     }
 };
-MqttExplorer = MqttExplorer_1 = __decorate([
+exports.MqttExplorer = MqttExplorer = MqttExplorer_1 = __decorate([
     (0, common_1.Injectable)(),
     __param(2, (0, common_1.Inject)(mqtt_constants_1.MQTT_LOGGER_PROVIDER)),
     __param(3, (0, common_1.Inject)(mqtt_constants_1.MQTT_CLIENT_INSTANCE)),
@@ -173,5 +173,4 @@ MqttExplorer = MqttExplorer_1 = __decorate([
         common_1.Logger,
         mqtt_1.Client, Object])
 ], MqttExplorer);
-exports.MqttExplorer = MqttExplorer;
 //# sourceMappingURL=mqtt.explorer.js.map

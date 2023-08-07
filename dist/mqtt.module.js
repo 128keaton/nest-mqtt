@@ -15,7 +15,7 @@ const mqtt_explorer_1 = require("./mqtt.explorer");
 const core_1 = require("@nestjs/core");
 const options_provider_1 = require("./options.provider");
 const mqtt_constants_1 = require("./mqtt.constants");
-let MqttModule = MqttModule_1 = class MqttModule {
+let MqttModule = exports.MqttModule = MqttModule_1 = class MqttModule {
     static forRootAsync(options) {
         return {
             module: MqttModule_1,
@@ -44,12 +44,11 @@ let MqttModule = MqttModule_1 = class MqttModule {
         };
     }
 };
-MqttModule = MqttModule_1 = __decorate([
+exports.MqttModule = MqttModule = MqttModule_1 = __decorate([
     (0, common_1.Global)(),
     (0, common_1.Module)({
         imports: [core_1.DiscoveryModule],
         exports: [mqtt_service_1.MqttService],
     })
 ], MqttModule);
-exports.MqttModule = MqttModule;
 //# sourceMappingURL=mqtt.module.js.map
