@@ -31,11 +31,6 @@ export function createClientProvider(): Provider {
 
       client.on('error', error => {
         log(error, true);
-        setTimeout(() => {
-          if (!client.connected) {
-            client.reconnect();
-          }
-        }, options.reconnectPeriod || 1000);
       });
 
       client.on('reconnect', () => {
@@ -45,20 +40,10 @@ export function createClientProvider(): Provider {
       client.on('close', error => {
         log('MQTT: Connection Closed');
         log(error, true);
-        setTimeout(() => {
-          if (!client.connected) {
-            client.reconnect();
-          }
-        }, options.reconnectPeriod || 1000);
       });
 
       client.on('offline', () => {
         log('MQTT: Connection Offline');
-        setTimeout(() => {
-          if (!client.connected) {
-            client.reconnect();
-          }
-        }, options.reconnectPeriod || 1000);
       });
 
       return client;
